@@ -196,8 +196,8 @@ class StaticSiteGenerator
 
     $jsonOriginalBaseUrl = trim(json_encode($this->_originalBaseUrl), '"');
     $jsonBaseUrl = trim(json_encode($baseUrl), '"');
-    //$html = str_replace($this->_originalBaseUrl . '/', $baseUrl, $html);
-    //$html = str_replace($this->_originalBaseUrl, $baseUrl, $html);
+    $html = str_replace($this->_originalBaseUrl . '/', $baseUrl, $html);
+    $html = str_replace($this->_originalBaseUrl, $baseUrl, $html);
     $html = str_replace($jsonOriginalBaseUrl . '\\/', $jsonBaseUrl, $html);
     $html = str_replace($jsonOriginalBaseUrl, $jsonBaseUrl, $html);
 
