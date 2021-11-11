@@ -169,10 +169,17 @@ class StaticSiteGenerator
     $kirby = $this->_kirby;
     $site = $kirby->site();
 
-      $page->content = null;
-      foreach ($page->files() as $file) {
+    $page->content = null;
+    foreach ($page->files() as $file) {
         $file->content = null;
-      }
+    }
+
+    foreach ($pages as $content_page) {
+        $content_page->content = null;
+        foreach ($content_page->files() as $file) {
+            $file->content = null;
+        }
+    }
 
     $site->content = null;
     foreach ($site->files() as $file) {
